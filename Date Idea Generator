@@ -1,0 +1,36 @@
+import random
+
+morning_activity_prices = {'Ice Skating': 20, 'Go Karting': 30, 'an Escape Room': 25, 'a Jazz Game': 60, 'Nickel City': 5,
+ 'Paintball': 45, 'Axe Throwing': 15, 'Hiking the Y': 0, 'the Pumpkin Patch': 10, 'Frisbee golf': 0, 'Geocaching': 0, 
+ 'a Sunrise Hike': 0, 'a Picnic: 0': 0, 'Rock Climbing': 20, 'a Bike Ride': 0, 'a Canyon Walk': 0}
+night_activity_prices = {'a Movie': 10, 'Squaw Peak': 0, 'the Mall': 20, 'the Hot Springs': 0, 'a Tram Ride at Sundance': 25, 
+'a Dance Party': 0, 'a Rage Room': 20, 'playing Legos': 0, 'Mini Golf': 15, 'a Concert': 30, 'a Hot Air Balloon Ride':50,
+ 'Skydiving': 60, 'Spikeball': 0, 'River Rafting': 20}
+
+morning_food_prices = {'Kolaches': 6, 'Donuts': 4, 'Kneaders': 8, 'Starbucks': 10, "Wendy's Breakfast": 5, "Einstein's Bagels": 4, 'IHOP': 10}
+night_food_prices = {'Chick-Fil-A': 10, 'Tucanos': 25, 'Pizza': 12, 'Costa Vida': 10, 'Sushi': 15, "In n' Out": 12, 'Panda Express': 10}
+
+morning_activities = list(morning_activity_prices.keys())
+night_activities = list(night_activity_prices.keys())
+
+
+morning_foods = list(morning_food_prices.keys())
+night_foods = list(night_food_prices.keys())
+
+time = input('Would you like to go in the morning or at night? ')
+
+if time == 'morning':
+    activity = morning_activities[random.randint(0, int(len(morning_activities)) - 1)]
+    food = morning_foods[random.randint(0, int(len(morning_foods)) - 1)]
+    activity_price = morning_activity_prices[activity]
+    food_price = morning_food_prices[food]
+    total_cost = activity_price + food_price
+
+if time == 'night':
+    activity = night_activities[random.randint(0, int(len(night_activities)) - 1)]
+    food = night_foods[random.randint(0, int(len(night_foods)) - 1)]
+    activity_price = night_activity_prices[activity]
+    food_price = night_food_prices[food]
+    total_cost = activity_price + food_price
+
+print('You should go try ' + activity + ' and eat ' + food + '! It will cost $' + str(total_cost) + '.')
